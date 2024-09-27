@@ -53,7 +53,7 @@ Run the project in development mode:
 npm run dev
 ```
 
-Open your browser and navigate to `http://localhost:3000` to see the block in action.
+Open your browser and navigate to `http://localhost:5173/` to see the block in action.
 
 ## Contributing
 
