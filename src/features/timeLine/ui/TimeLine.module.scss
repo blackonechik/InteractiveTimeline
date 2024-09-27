@@ -1,0 +1,109 @@
+@import '/src/shared/styles/colors.scss';
+
+@mixin visibleButton() {
+  border: 1px solid rgba($black-blue, 0.5);
+  background-color: transparent;
+  transform: scale(1);
+  background-color: $white;
+}
+
+.timeline-container {
+  position: relative;
+  z-index: 1000;
+  margin: 0 auto;
+}
+
+.title-current {
+  display: none;
+}
+
+.circle {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba($black-blue, 0.2);
+  transform: rotate(-90deg); // Исходное вращение для корректного расположения кнопок
+  transform-style: preserve-3d; // Сохранение 3D-контекста
+}
+
+.circle-button {
+  position: absolute;
+  z-index: 100;
+  width: 56px;
+  height: 56px;
+  background-color: $black-blue;
+  border-radius: 50%;
+  cursor: pointer;
+  transform: scale(0.15);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+
+  &:after {
+    content: '';
+    position: absolute;
+    height: 140px;
+    width: 140px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &:hover {
+    @include visibleButton();
+  }
+
+  &:hover &__number {
+    opacity: 1;
+  }
+
+  &__number {
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  &__info {
+    left: 46px;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+
+    &--active {
+      opacity: 1;
+    }
+  }
+
+  &--active {
+    @include visibleButton();
+  }
+
+  &--active &__number {
+    opacity: 1;
+  }
+}
+
+
+.event-details {
+  margin-top: 20px;
+  text-align: center;
+
+  .event-list {
+    margin-top: 10px;
+
+    .event-item {
+      margin-bottom: 8px;
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .circle {
+    display: none
+  }
+
+  .title-current {
+    display: block;
+  }
+}

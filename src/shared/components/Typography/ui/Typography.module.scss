@@ -1,0 +1,107 @@
+@import '/src/shared/styles/colors.scss';
+
+@mixin typography($size, $line-height: $size * 1.5, $letter-spacing: normal) {
+  margin: 0;
+  font-size: $size;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+}
+
+.h1 {
+  @include typography($size: 56px, $line-height: 120%);
+  color: $black-blue;
+  font-weight: 700;
+}
+
+.big-strong {
+  @include typography($size: 200px, $line-height: 80%, $letter-spacing: -4px);
+  font-weight: 700;
+}
+
+.body1 {
+  @include typography($size: 25px, $line-height: 30px);
+  color: $light-blue
+}
+
+.body2 {
+  @include typography($size: 20px);
+  color: $black-blue
+}
+
+.body3 {
+  @include typography($size: 14px, $line-height: normal);
+  color: $black-blue
+}
+
+.weight-400 {
+  font-weight: 400;
+}
+
+.weight-600 {
+  font-weight: 600;
+}
+
+.weight-700 {
+  font-weight: 700;
+}
+
+.color {
+  color: $black-blue;
+}
+
+.color-light-blue {
+  color: $light-blue;
+}
+
+.color-transparent-light-blue {
+  color: $transparent-light-blue;
+}
+
+.color-fuchsia {
+  color: $fuchsia;
+}
+
+.color-iris {
+  color: $iris;
+}
+
+@media screen and (max-width: 1440px) {
+
+  .h1 {
+    @include typography($size: 46px);
+  }
+
+  .big-strong {
+    @include typography($size: 150px);
+  }
+
+}
+
+@media screen and (max-width: 1024px) {
+  .h1 {
+    @include typography($size: 36px);
+  }
+
+  .big-strong {
+    @include typography($size: 100px);
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .h1 {
+    @include typography($size: 20px);
+  }
+
+  .big-strong {
+    @include typography($size: 56px, $letter-spacing: -1.12px);
+  }
+
+  .body1 {
+    @include typography($size: 16px);
+  }
+
+  .body2 {
+    @include typography($size: 14px);
+  }
+}
+

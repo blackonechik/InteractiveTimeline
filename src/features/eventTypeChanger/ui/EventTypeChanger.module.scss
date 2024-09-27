@@ -1,0 +1,101 @@
+@import '/src/shared/styles/colors.scss';
+
+.event-type-changer {
+  padding-inline: 80px;
+  margin-bottom: 56px;
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__wrapper {
+    display: flex;
+    gap: 20px;
+    position: relative;
+    z-index: 1000;
+  }
+
+  &__button {
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border: none;
+    transition: opacity 0.3s ease;
+
+    &--reverse {
+      transform: rotate(180deg);
+    }
+
+    &:disabled {
+      opacity: 0.5;
+    }
+  }
+
+  &__icon {
+    &--small {
+      display: none;
+    }
+  }
+}
+
+.dots {
+	position: relative;
+	display: none;
+	gap: 10px;
+	justify-content: center;
+	transform: translateY(-20px);
+	z-index: 1000;
+
+	&__button {
+    width: 6px;
+    height: 6px;
+    border: none;
+    border-radius: 50%;
+    background-color: $black-blue;
+    margin: 0 4px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+		opacity: 0.5;
+
+    &--active {
+      opacity: 1;
+      background-color: $black-blue; // можно задать активный цвет
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .event-type-changer {
+    padding-inline: 0;
+    margin-bottom: 0;
+
+    &__title {
+      margin-bottom: 8px;
+    }
+
+    &__wrapper {
+      gap: 8px;
+    }
+
+    &__button {
+      width: 25px;
+      height: 25px;
+    }
+
+    &__icon {
+      display: none;
+
+      &--small {
+        display: block;
+      }
+    }
+
+    &__dot {
+      margin: 0 2px;
+    }
+  }
+
+	.dots {
+		display: flex;
+	}
+}

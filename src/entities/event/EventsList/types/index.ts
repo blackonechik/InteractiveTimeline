@@ -1,0 +1,1 @@
+export type { EventsListProps } from './eventslist.types'

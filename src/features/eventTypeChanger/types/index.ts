@@ -1,0 +1,1 @@
+export type { EventTypeChangerProps } from './eventtypechanger.types'

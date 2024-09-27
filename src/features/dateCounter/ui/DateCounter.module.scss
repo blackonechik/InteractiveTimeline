@@ -1,0 +1,10 @@
+.date-counter {
+	display: flex;
+	gap: 60px;
+}
+
+@media screen and (max-width: 576px) {
+	.date-counter {
+		gap: 30px;
+	}
+}

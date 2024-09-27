@@ -1,0 +1,166 @@
+@import '/src/shared/styles/colors.scss';
+
+@mixin centerPosition() {
+	position: absolute;
+	inset: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.timeline {
+	min-height: 100%;
+	max-width: 1440px;
+	margin: 0 auto;
+	padding: 0 160px 0 320px;
+
+	&__top {
+		position: relative;
+		min-height: 441px;
+	}
+
+	&__bottom {
+		display: flex;
+		flex-direction: column;
+		transform: translateY(-55px);
+	}
+
+	&__wrapper {
+		position: relative;
+		overflow: hidden;
+
+		&::after,
+		&::before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			width: 1px;
+			height: 100%;
+			transform: translateY(-50%);
+			background-color: rgba($black-blue, 0.1);
+		}
+
+		&::after {
+			right: 0;
+		}
+
+		&::before {
+			left: 0;
+		}
+	}
+
+	&__background {
+		position: absolute;
+		inset: 0;
+		z-index: -100;
+
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			background-color: rgba($black-blue, 0.1);
+		}
+
+		&::before {
+			width: 1px;
+			height: 100%;
+			left: 50%;
+			transform: scaleY(3.5);
+		}
+
+		&::after {
+			width: 100%;
+			height: 1px;
+			top: 50%;
+		}
+	}
+
+	&__dateCounter,
+	&__timeLine {
+		@include centerPosition()
+	}
+}
+
+.title {
+	position: relative;
+	max-width: 353px;
+	padding-left: 80px;
+	transform: translateY(70px);
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: 0;
+		height: calc(100% - 7px * 2);
+		width: 5px;
+		background: linear-gradient(to bottom, $light-blue, $fuchsia);
+		transform: translateY(-50%);
+	}
+}
+
+@media screen and (max-width: 1440px) {
+	.timeline {
+		padding: 0 40px 0 80px;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.timeline {
+		padding: 0 20px;
+
+		&__bottom {
+			transform: translateY(0);
+		}
+	}
+}
+
+@media screen and (max-width: 576px) {
+	.title {
+		max-width: 125px;
+		padding-left: 0;
+		margin-bottom: 56px;
+		transform: none;
+
+		&::before {
+			display: none;
+		}
+	}
+
+	.timeline {
+		&__wrapper {
+
+			&::before,
+			&::after {
+				display: none;
+			}
+		}
+
+		&__top {
+			display: flex;
+			flex-direction: column;
+			gap: 45px;
+			min-height: auto;
+			margin-bottom: 20px;
+		}
+
+		&__bottom {
+			flex-direction: column-reverse;
+			gap: 50px;
+		}
+
+		&__background {
+			display: none;
+		}
+
+		&__dateCounter,
+		&__timeLine {
+			position: relative;
+		}
+
+		&__timeLine {
+			flex-direction: column-reverse;
+			align-items: flex-start;
+		}
+	}
+}
