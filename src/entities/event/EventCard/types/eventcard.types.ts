@@ -1,3 +1,3 @@
-import type { Event } from '../../TimeLine/types/';
+import type { Event } from 'src/features/timeLine';
 
 export type EventCardProps = Event

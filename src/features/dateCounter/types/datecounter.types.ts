@@ -1,4 +1,4 @@
-import { EventCardProps } from '../../EventCard';
+import { EventCardProps } from 'entities/event';
 
 export interface DateCounterProps {
 	events: EventCardProps[]

@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { IconSvgProps } from '../../../shared/types/icon.types';
+import { IconSvgProps } from 'shared/types/icon.types';
 
 export const SwiperIcon: FC<IconSvgProps> = ({ size = 40, width, height, ...props }) => (
 	<svg fill="none" height={size || height} viewBox="15 15 40 40" width={size || width} {...props}>

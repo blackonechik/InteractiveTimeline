@@ -1,6 +1,5 @@
 {
-  "name": "obly2",
-  "private": true,
+  "name": "interactive-timeline",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
