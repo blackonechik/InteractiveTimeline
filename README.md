@@ -40,8 +40,8 @@ You can see a demonstration of the block in action with the maximum number of ti
 To get started, clone the repository and install the dependencies:
 
 ```bash
-git clone <repository-url>
-cd <project-directory>
+git clone https://github.com/blackonechik/InteractiveTimeline
+cd InteractiveTimeline
 npm install
 ```
 
