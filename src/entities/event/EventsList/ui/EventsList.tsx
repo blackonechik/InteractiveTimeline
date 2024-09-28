@@ -13,7 +13,6 @@ import { Button } from 'shared/components/Button';
 
 export const EventsList: FC<EventsListProps> = ({ events }) => {
     const {
-        slidesPerView,
         swiperInstance,
         setSwiperInstance,
         isBeginning,
@@ -50,23 +49,29 @@ export const EventsList: FC<EventsListProps> = ({ events }) => {
             )}
 
             <Swiper
-                slidesPerView={slidesPerView}
+                slidesPerView={3}
                 className={styles['swiper-container']}
                 navigation={false}
                 onSwiper={setSwiperInstance}
                 onSlideChange={handleSlideChange}
+                spaceBetween={10} // Устанавливаем отступ в 10 пикселей
+
                 breakpoints={{
                     320: {
                         slidesPerView: 1,
+                        spaceBetween: 20, // Устанавливаем отступ в 20 пикселей для экранов шириной 320 пикселей и меньше
                     },
                     640: {
                         slidesPerView: 2,
+                        spaceBetween: 30, // Устанавливаем отступ в 30 пикселей для экранов шириной от 321 пикселя до 640 пикселей
                     },
                     1024: {
                         slidesPerView: 3,
+                        spaceBetween: 40, // Устанавливаем отступ в 40 пикселей для экранов шириной от 641 пикселя до 1024 пикселей
                     },
                 }}
             >
+
 
                 {events
                     .sort((a, b) => a.year - b.year)

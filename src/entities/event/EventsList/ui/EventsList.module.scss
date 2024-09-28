@@ -24,20 +24,16 @@
 			transform: translateY(-50%) rotate(180deg);
 		}
 	}
+
+	&__item {
+		max-width: 400px;
+		flex-shrink: 0;
+	}
 }
 
 .swiper-container {
 	width: 100%;
 	overflow: hidden;
-}
-
-.events-list__item {
-	max-width: 400px;
-	flex-shrink: 0;
-
-	&:not(:last-child) {
-		margin-right: 80px;
-	}
 }
 
 @media screen and (max-width: 576px) {
@@ -61,10 +57,6 @@
 
 		&__item {
 			max-width: 166px;
-
-			&:not(:last-child) {
-				margin-right: 20px;
-			}
 		}
 	}
 }
