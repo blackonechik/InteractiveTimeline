@@ -1,6 +1,6 @@
 # Interactive timeline
 
-<img src="https://github.com/blackonechik/InteractiveTimeline/blob/main/demo.gif?raw=true">
+<img src="https://i.ytimg.com/vi/sJ2yDnRF22k/maxresdefault.jpg">
 
 <br>
 
